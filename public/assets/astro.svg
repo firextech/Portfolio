@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <!-- Body suit -->
+  <ellipse cx="100" cy="160" rx="52" ry="65" fill="#00A1E0"/>
+  <!-- Chest panel -->
+  <rect x="72" y="130" width="56" height="48" rx="10" fill="#032D60"/>
+  <!-- Chest lights -->
+  <circle cx="88" cy="148" r="5" fill="#1B96FF"/>
+  <circle cx="100" cy="148" r="5" fill="#FF9900"/>
+  <circle cx="112" cy="148" r="5" fill="#00A1E0"/>
+  <!-- Display screen on chest -->
+  <rect x="80" y="158" width="40" height="14" rx="4" fill="#0D1B3E"/>
+  <rect x="83" y="161" width="34" height="8" rx="2" fill="#1B96FF" opacity="0.5"/>
+  <!-- Helmet -->
+  <ellipse cx="100" cy="95" rx="46" ry="48" fill="#F4F6F9"/>
+  <!-- Visor -->
+  <ellipse cx="100" cy="95" rx="34" ry="36" fill="#032D60"/>
+  <ellipse cx="100" cy="92" rx="28" ry="28" fill="#0D2847"/>
+  <!-- Face -->
+  <circle cx="88" cy="88" r="7" fill="#1B96FF" opacity="0.9"/>
+  <circle cx="112" cy="88" r="7" fill="#1B96FF" opacity="0.9"/>
+  <!-- Eye highlights -->
+  <circle cx="90" cy="86" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="114" cy="86" r="2.5" fill="white" opacity="0.8"/>
+  <!-- Smile -->
+  <path d="M90 104 Q100 114 110 104" stroke="#00A1E0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Visor glare -->
+  <ellipse cx="115" cy="76" rx="8" ry="5" fill="white" opacity="0.12" transform="rotate(-20 115 76)"/>
+  <!-- Helmet ring -->
+  <ellipse cx="100" cy="138" rx="46" ry="9" fill="#00A1E0" opacity="0.5"/>
+  <!-- Arms -->
+  <ellipse cx="43" cy="155" rx="14" ry="36" fill="#00A1E0" transform="rotate(-12 43 155)"/>
+  <ellipse cx="157" cy="155" rx="14" ry="36" fill="#00A1E0" transform="rotate(12 157 155)"/>
+  <!-- Gloves -->
+  <ellipse cx="37" cy="186" rx="12" ry="10" fill="#032D60"/>
+  <ellipse cx="163" cy="186" rx="12" ry="10" fill="#032D60"/>
+  <!-- Legs -->
+  <rect x="68" y="218" width="24" height="18" rx="8" fill="#032D60"/>
+  <rect x="108" y="218" width="24" height="18" rx="8" fill="#032D60"/>
+  <!-- Boots -->
+  <ellipse cx="80" cy="236" rx="14" ry="6" fill="#0B1F3A"/>
+  <ellipse cx="120" cy="236" rx="14" ry="6" fill="#0B1F3A"/>
+  <!-- Backpack jetpack -->
+  <rect x="55" y="125" width="14" height="40" rx="5" fill="#0B4D8C"/>
+  <rect x="131" y="125" width="14" height="40" rx="5" fill="#0B4D8C"/>
+  <!-- Jetpack flames -->
+  <ellipse cx="62" cy="168" rx="5" ry="8" fill="#FF9900" opacity="0.9"/>
+  <ellipse cx="62" cy="170" rx="3" ry="5" fill="#FFCC00"/>
+  <ellipse cx="138" cy="168" rx="5" ry="8" fill="#FF9900" opacity="0.9"/>
+  <ellipse cx="138" cy="170" rx="3" ry="5" fill="#FFCC00"/>
+  <!-- Stars around -->
+  <circle cx="20" cy="40" r="2" fill="white" opacity="0.6"/>
+  <circle cx="175" cy="60" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="10" cy="120" r="1.5" fill="#1B96FF" opacity="0.7"/>
+  <circle cx="190" cy="90" r="2" fill="#1B96FF" opacity="0.6"/>
+  <circle cx="30" cy="200" r="1" fill="white" opacity="0.4"/>
+  <circle cx="170" cy="30" r="1" fill="white" opacity="0.4"/>
+</svg>

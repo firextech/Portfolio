@@ -1,0 +1,32 @@
+# Claude local config
+.claude/
+
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# debug
+npm-debug.log*
+
+# env
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# screenshots / temp
+*.png
+*.jpg
+!public/**/*.png
+!public/**/*.jpg
+!public/**/*.jpeg
+
+# playwright
+playwright-report/
+test-results/

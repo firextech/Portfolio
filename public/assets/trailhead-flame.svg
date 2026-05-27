@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none">
+  <!-- Outer flame -->
+  <path d="M60 155 C20 155 5 120 10 90 C15 60 30 50 25 25 C40 45 35 65 50 72 C45 50 55 30 60 5 C70 30 65 55 80 65 C85 40 90 55 95 75 C110 100 105 140 60 155Z" fill="url(#flameOuter)"/>
+  <!-- Mid flame -->
+  <path d="M60 145 C35 145 22 118 28 95 C33 75 45 68 42 48 C54 62 50 78 60 82 C56 65 63 48 68 28 C76 48 70 68 80 78 C85 60 90 72 92 90 C98 118 85 145 60 145Z" fill="url(#flameMid)"/>
+  <!-- Inner flame -->
+  <path d="M60 135 C42 135 32 112 38 95 C43 80 52 76 50 62 C58 72 56 85 62 88 C60 76 65 62 70 46 C76 62 72 76 78 84 C82 70 86 80 86 95 C88 115 78 135 60 135Z" fill="url(#flameInner)"/>
+  <!-- Core -->
+  <ellipse cx="60" cy="108" rx="14" ry="20" fill="#FFEE80" opacity="0.9"/>
+  <defs>
+    <linearGradient id="flameOuter" x1="60" y1="5" x2="60" y2="155" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#FF9900"/>
+    </linearGradient>
+    <linearGradient id="flameMid" x1="60" y1="28" x2="60" y2="145" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFAA00"/>
+      <stop offset="100%" stop-color="#FF7700"/>
+    </linearGradient>
+    <linearGradient id="flameInner" x1="60" y1="46" x2="60" y2="135" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FFAA00"/>
+    </linearGradient>
+  </defs>
+</svg>
