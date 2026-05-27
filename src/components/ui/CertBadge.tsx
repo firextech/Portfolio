@@ -54,7 +54,6 @@ export default function CertBadge({ cert }: Props) {
               alt={cert.name}
               fill
               className="object-contain"
-              unoptimized
             />
           </div>
 
@@ -95,7 +94,6 @@ export default function CertBadge({ cert }: Props) {
               alt={cert.name}
               fill
               className="object-contain drop-shadow-xl"
-              unoptimized
             />
           </div>
           <p className="text-white font-display font-bold text-center text-sm leading-tight">

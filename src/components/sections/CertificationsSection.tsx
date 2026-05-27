@@ -30,7 +30,6 @@ export default function CertificationsSection() {
             width={208}
             height={260}
             className="object-contain drop-shadow-2xl"
-            unoptimized
           />
         </motion.div>
       </div>

@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
   basePath: isProd ? '/Portfolio' : '',
   assetPrefix: isProd ? '/Portfolio/' : '',
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.ts',
   },
 }
 

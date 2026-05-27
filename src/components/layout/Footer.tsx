@@ -14,7 +14,6 @@ export default function Footer() {
               width={72}
               height={22}
               className="object-contain h-5 w-auto"
-              unoptimized
             />
           </div>
           <span className="text-white/40 font-display text-sm">
@@ -49,7 +48,6 @@ export default function Footer() {
               width={24}
               height={24}
               className="object-contain h-6 w-auto"
-              unoptimized
             />
           </a>
         </div>

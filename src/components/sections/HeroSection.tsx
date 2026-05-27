@@ -33,10 +33,10 @@ export default function HeroSection() {
 
       {/* Cloud decorations */}
       <div className="absolute right-0 top-0 w-96 h-64 z-[1] opacity-20 pointer-events-none">
-        <Image src="/assets/cloud-1.svg" alt="" fill className="object-contain" unoptimized />
+        <Image src="/assets/cloud-1.svg" alt="" fill className="object-contain" />
       </div>
       <div className="absolute left-0 bottom-20 w-80 h-48 z-[1] opacity-10 pointer-events-none">
-        <Image src="/assets/cloud-2.svg" alt="" fill className="object-contain" unoptimized />
+        <Image src="/assets/cloud-2.svg" alt="" fill className="object-contain" />
       </div>
 
       {/* Main content */}
@@ -83,7 +83,7 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-display font-semibold text-sm hover:border-sf-orange hover:bg-sf-orange/10 transition-all duration-300"
             >
-              <Image src="/assets/trailhead-logo.png" alt="Trailhead" width={18} height={18} className="object-contain h-[18px] w-auto" unoptimized />
+              <Image src="/assets/trailhead-logo.png" alt="Trailhead" width={18} height={18} className="object-contain h-[18px] w-auto" />
               Ver Trailhead
             </a>
           </motion.div>
@@ -119,7 +119,6 @@ export default function HeroSection() {
                 fill
                 className="object-cover object-center"
                 priority
-                unoptimized
               />
             </div>
 
@@ -166,7 +165,6 @@ export default function HeroSection() {
               width={176}
               height={220}
               className="object-contain drop-shadow-2xl"
-              unoptimized
             />
           </motion.div>
         </motion.div>

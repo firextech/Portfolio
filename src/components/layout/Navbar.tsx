@@ -58,7 +58,6 @@ export default function Navbar() {
                 width={90}
                 height={28}
                 className="object-contain h-7 w-auto"
-                unoptimized
               />
             </div>
             <span className="hidden sm:block text-white/60 font-display font-medium text-xs group-hover:text-white/90 transition-colors duration-300">

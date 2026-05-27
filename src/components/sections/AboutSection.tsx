@@ -87,7 +87,6 @@ export default function AboutSection() {
                 alt="Diego Gil Jiménez"
                 fill
                 className="object-cover object-center"
-                unoptimized
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-sf-navy/90 to-transparent">
                 <p className="text-white font-display font-semibold">Diego Gil Jiménez</p>

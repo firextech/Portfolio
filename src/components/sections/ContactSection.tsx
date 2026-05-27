@@ -126,7 +126,6 @@ function TrailheadIcon({ color: _ }: { color: string }) {
       width={28}
       height={28}
       className="object-contain h-7 w-auto"
-      unoptimized
     />
   )
 }

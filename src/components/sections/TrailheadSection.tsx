@@ -54,7 +54,6 @@ export default function TrailheadSection() {
                 width={280}
                 height={140}
                 className="object-contain max-w-full"
-                unoptimized
               />
             </motion.div>
 

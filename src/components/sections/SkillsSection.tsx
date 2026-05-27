@@ -87,7 +87,6 @@ export default function SkillsSection() {
                     alt="Einstein — Salesforce AI"
                     fill
                     className="object-contain"
-                    unoptimized
                   />
                 </div>
                 <div>
