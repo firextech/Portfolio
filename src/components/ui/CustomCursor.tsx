@@ -1,17 +1,25 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function CustomCursor() {
+  const [enabled, setEnabled] = useState(false)
   const dotRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
   const posRef = useRef({ x: 0, y: 0 })
   const ringPosRef = useRef({ x: 0, y: 0 })
 
+  // Only enable on devices with a real pointer (desktop). Never on touch/mobile.
   useEffect(() => {
     if (typeof window === 'undefined') return
-    // Hide on touch devices
-    if (window.matchMedia('(hover: none)').matches) return
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)')
+    setEnabled(mq.matches)
+    const onChange = (e: MediaQueryListEvent) => setEnabled(e.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
 
+  useEffect(() => {
+    if (!enabled) return
     const dot = dotRef.current
     const ring = ringRef.current
     if (!dot || !ring) return
@@ -57,7 +65,9 @@ export default function CustomCursor() {
         el.removeEventListener('mouseleave', onLeaveLink)
       })
     }
-  }, [])
+  }, [enabled])
+
+  if (!enabled) return null
 
   return (
     <>

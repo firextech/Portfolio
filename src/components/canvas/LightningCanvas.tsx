@@ -12,7 +12,6 @@ interface Particle {
 }
 
 const COLORS = ['#1B96FF', '#00A1E0', '#1B96FF', '#00A1E0', '#FF9900']
-const PARTICLE_COUNT = typeof window !== 'undefined' && window.innerWidth < 768 ? 400 : 900
 
 export default function LightningCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -23,7 +22,13 @@ export default function LightningCanvas() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    let animId: number
+    // Respect reduced-motion: skip the animation entirely.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const isMobile = window.innerWidth < 768
+    const particleCount = isMobile ? 150 : 700
+
+    let animId: number | null = null
     let particles: Particle[] = []
     let arcs: Array<{ x1: number; y1: number; x2: number; y2: number; life: number }> = []
 
@@ -34,20 +39,16 @@ export default function LightningCanvas() {
     resize()
     window.addEventListener('resize', resize)
 
-    const createParticles = () => {
-      particles = Array.from({ length: PARTICLE_COUNT }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random() * 0.5 + 0.1,
-        radius: Math.random() * 1.5 + 0.5,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-      }))
-    }
-    createParticles()
+    particles = Array.from({ length: particleCount }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.5 + 0.1,
+      radius: Math.random() * 1.5 + 0.5,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    }))
 
-    // Spawn arcs occasionally
     const spawnArc = () => {
       if (Math.random() > 0.3) return
       const p1 = particles[Math.floor(Math.random() * particles.length)]
@@ -60,7 +61,6 @@ export default function LightningCanvas() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Draw particles
       particles.forEach((p) => {
         p.x += p.vx
         p.y += p.vy
@@ -76,7 +76,6 @@ export default function LightningCanvas() {
         ctx.fill()
       })
 
-      // Draw arcs (electric connections)
       arcs = arcs.filter((a) => a.life > 0)
       arcs.forEach((a) => {
         ctx.beginPath()
@@ -95,11 +94,33 @@ export default function LightningCanvas() {
       frame++
       animId = requestAnimationFrame(draw)
     }
-    draw()
+
+    const start = () => {
+      if (animId == null) animId = requestAnimationFrame(draw)
+    }
+    const stop = () => {
+      if (animId != null) {
+        cancelAnimationFrame(animId)
+        animId = null
+      }
+    }
+
+    // Only animate while the hero canvas is actually on screen — saves
+    // battery/CPU and keeps scrolling fluid on mobile.
+    const io = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      { threshold: 0 }
+    )
+    io.observe(canvas)
+
+    const onVisibility = () => (document.hidden ? stop() : start())
+    document.addEventListener('visibilitychange', onVisibility)
 
     return () => {
-      cancelAnimationFrame(animId)
+      stop()
+      io.disconnect()
       window.removeEventListener('resize', resize)
+      document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 

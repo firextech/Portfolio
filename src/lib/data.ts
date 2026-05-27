@@ -212,7 +212,7 @@ export const TRAILHEAD_STATS = {
 }
 
 export const CONTACT = {
-  linkedin: 'https://www.linkedin.com/in/diego-giljiménez-941595240',
+  linkedin: 'https://www.linkedin.com/in/diego-gil-jim%C3%ADnez-941595240',
   trailblazer: 'https://www.salesforce.com/trailblazer/dgiljimnez',
 }
 

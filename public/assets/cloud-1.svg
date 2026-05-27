@@ -1,10 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" fill="none">
-  <g opacity="0.15">
-    <ellipse cx="150" cy="100" rx="130" ry="55" fill="#00A1E0"/>
-    <ellipse cx="100" cy="80" rx="75" ry="55" fill="#00A1E0"/>
-    <ellipse cx="190" cy="75" rx="65" ry="50" fill="#00A1E0"/>
-    <ellipse cx="150" cy="65" rx="55" ry="45" fill="#1B96FF"/>
-    <ellipse cx="100" cy="60" rx="45" ry="40" fill="#1B96FF"/>
-    <ellipse cx="185" cy="58" rx="50" ry="38" fill="#1B96FF"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none">
+  <defs>
+    <linearGradient id="sfCloud" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1B96FF"/>
+      <stop offset="1" stop-color="#00A1E0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sfCloud)" d="M250 168
+    c33 0 60-26 60-58
+    c0-30-24-55-54-58
+    c-7-29-33-50-64-50
+    c-25 0-47 14-58 35
+    c-6-3-13-5-21-5
+    c-24 0-44 19-45 43
+    c-19 7-33 25-33 47
+    c0 27 22 49 49 49
+    z"/>
 </svg>

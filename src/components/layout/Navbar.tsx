@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollProgress } from '@/hooks/useScrollProgress'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { mobileMenuVariants, fadeDown } from '@/lib/motion'
+import { CONTACT } from '@/lib/data'
 
 const NAV_LINKS = [
   { id: 'sobre-mi',        label: 'Sobre Mí' },
@@ -86,7 +87,7 @@ export default function Navbar() {
           {/* CTA + hamburger */}
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com/in/diego-giljiménez-941595240"
+              href={CONTACT.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-sf-blue text-white text-sm font-display font-semibold hover:bg-sf-electric transition-colors duration-300"
@@ -133,7 +134,7 @@ export default function Navbar() {
             <motion.a
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-              href="https://www.linkedin.com/in/diego-giljiménez-941595240"
+              href={CONTACT.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 flex items-center gap-2 px-8 py-3 rounded-xl bg-sf-blue text-white font-display font-semibold hover:bg-sf-electric transition-colors"

@@ -50,7 +50,11 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
+}
+
+/* Hide native cursor only where the custom cursor renders (desktop pointers) */
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
 }
 
 /* Custom scrollbar */
@@ -122,4 +126,16 @@ body {
 /* Sections base */
 section {
   position: relative;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
