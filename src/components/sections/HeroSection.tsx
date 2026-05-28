@@ -31,10 +31,7 @@ export default function HeroSection() {
         style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(0,161,224,0.08) 0%, transparent 70%)' }}
       />
 
-      {/* Cloud decorations */}
-      <div className="absolute right-0 top-0 w-96 h-64 z-[1] opacity-20 pointer-events-none">
-        <Image src="/assets/cloud-1.svg" alt="" fill className="object-contain" />
-      </div>
+      {/* Cloud decoration (bottom-left) */}
       <div className="absolute left-0 bottom-20 w-80 h-48 z-[1] opacity-10 pointer-events-none">
         <Image src="/assets/cloud-2.svg" alt="" fill className="object-contain" />
       </div>
@@ -63,7 +60,7 @@ export default function HeroSection() {
           <motion.p variants={fadeUp} className="text-white/40 text-base mb-10 max-w-md leading-relaxed">
             Transformando procesos empresariales en{' '}
             <span className="text-white/60">VIEWNEXT · IBM</span>. Apex, Flows,
-            Service Cloud e integraciones para organizaciones enterprise.
+            Service/Sales/Experience Cloud y tareas de consultoría.
           </motion.p>
 
           {/* CTA buttons */}

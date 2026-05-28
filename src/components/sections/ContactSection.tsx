@@ -45,10 +45,6 @@ export default function ContactSection() {
               <br />
               <span className="text-sf-blue">Salesforce?</span>
             </h2>
-            <p className="text-sf-gray max-w-xl mx-auto leading-relaxed">
-              Disponible para proyectos de implementación, consultoría, desarrollo Apex,
-              Service Cloud y automatizaciones enterprise.
-            </p>
           </div>
         </ScrollReveal>
 
@@ -101,7 +97,7 @@ export default function ContactSection() {
           <div className="text-center">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-sf-navy/5 border border-sf-navy/10">
               <span className="w-2 h-2 rounded-full bg-sf-blue animate-pulse" />
-              <span className="text-sf-navy/60 text-sm font-mono">Salamanca, España · Remoto disponible</span>
+              <span className="text-sf-navy/60 text-sm font-mono">España · Remoto</span>
             </div>
           </div>
         </ScrollReveal>

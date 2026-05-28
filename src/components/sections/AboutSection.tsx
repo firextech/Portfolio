@@ -44,7 +44,7 @@ export default function AboutSection() {
           >
             <div className="grid grid-cols-2 gap-4 mb-8">
               {STATS.map((stat) => (
-                <StatCounter key={stat.label} {...stat} />
+                <StatCounter key={stat.label} {...stat} variant="light" />
               ))}
             </div>
 
@@ -58,10 +58,16 @@ export default function AboutSection() {
                 }}
               >
                 <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center text-base font-bold flex-shrink-0"
-                  style={{ background: '#004B82', color: '#fff' }}
+                  className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-white border"
+                  style={{ borderColor: 'rgba(0,75,130,0.2)' }}
                 >
-                  C
+                  <Image
+                    src="/assets/university-of-cambridge.png"
+                    alt="University of Cambridge"
+                    width={36}
+                    height={36}
+                    className="object-contain h-9 w-auto"
+                  />
                 </div>
                 <div>
                   <p className="font-display font-bold text-sm" style={{ color: '#004B82' }}>
@@ -120,9 +126,8 @@ export default function AboutSection() {
                 de negocio de cada cliente.
               </p>
               <p>
-                En 2026, mi foco está en la <strong className="text-sf-navy">adopción de Salesforce Einstein</strong>{' '}
-                e inteligencia artificial aplicada a CRM, automatizaciones predictivas y arquitecturas de
-                integración que conectan Salesforce con el ecosistema tecnológico empresarial.
+                En 2026, mi foco está en la <strong className="text-sf-navy">adopción de Salesforce</strong>{' '}
+                utilizando inteligencia artificial aplicada a CRM.
               </p>
             </div>
 
