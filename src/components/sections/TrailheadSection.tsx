@@ -49,7 +49,7 @@ export default function TrailheadSection() {
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
               <Image
-                src="/assets/trailhead-logo.png"
+                src="/assets/TrailheadRecorte.png"
                 alt="Trailhead"
                 width={280}
                 height={140}
@@ -87,7 +87,7 @@ export default function TrailheadSection() {
                 </h2>
                 <p className="text-white/40 leading-relaxed">
                   Trailhead es la plataforma de formación gratuita de Salesforce. Con más
-                  de 35 superbadges completados y rango Ranger nivel 4, mantengo mis
+                  de 40 superbadges completados y rango Ranger nivel 4, mantengo mis
                   conocimientos actualizados con las últimas innovaciones de Salesforce.
                 </p>
               </div>
@@ -111,15 +111,15 @@ export default function TrailheadSection() {
             <ScrollReveal delay={0.4}>
               <div className="space-y-3">
                 {[
-                  { icon: '🏆', title: 'Ranger', desc: 'El rango más alto de Trailhead, nivel 4' },
-                  { icon: '⚡', title: 'Superbadge Champion', desc: '35+ superbadges de Salesforce completados' },
-                  { icon: '🤖', title: 'Einstein AI Expert', desc: 'Especializado en AI y Einstein Analytics' },
+                  { iconSrc: '/icons/trophy.svg', title: 'Ranger', desc: 'El rango más alto de Trailhead, nivel 4' },
+                  { iconSrc: '/icons/bolt.svg',   title: 'Superbadge Champion', desc: '40+ superbadges de Salesforce completados' },
+                  { iconSrc: '/icons/robot.svg',  title: 'Einstein AI Expert', desc: 'Especializado en AI y Einstein Analytics' },
                 ].map((item) => (
                   <div
                     key={item.title}
                     className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-sf-orange/20 transition-all duration-300"
                   >
-                    <span className="text-2xl">{item.icon}</span>
+                    <Image src={item.iconSrc} alt="" width={28} height={28} className="w-7 h-7" />
                     <div>
                       <p className="font-display font-semibold text-white text-sm">{item.title}</p>
                       <p className="text-white/40 text-xs">{item.desc}</p>

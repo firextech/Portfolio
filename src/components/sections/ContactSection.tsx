@@ -117,7 +117,7 @@ function LinkedInIcon({ color }: { color: string }) {
 function TrailheadIcon({ color: _ }: { color: string }) {
   return (
     <Image
-      src="/assets/trailhead-logo.png"
+      src="/assets/TrailheadRecorte.png"
       alt="Trailhead"
       width={28}
       height={28}

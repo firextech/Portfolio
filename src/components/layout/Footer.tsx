@@ -43,7 +43,7 @@ export default function Footer() {
             aria-label="Trailblazer"
           >
             <Image
-              src="/assets/trailhead-logo.png"
+              src="/assets/TrailheadRecorte.png"
               alt="Trailhead"
               width={24}
               height={24}

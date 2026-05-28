@@ -10,7 +10,7 @@ const LightningCanvas = dynamic(() => import('../canvas/LightningCanvas'), { ssr
 const STATS = [
   { value: '3+',  label: 'Años de\nexperiencia' },
   { value: '8',   label: 'Certificaciones\nSalesforce' },
-  { value: '35+', label: 'Superbadges\nen Trailhead' },
+  { value: '40+', label: 'Superbadges\nen Trailhead' },
 ]
 
 export default function HeroSection() {
@@ -59,8 +59,9 @@ export default function HeroSection() {
           </motion.p>
           <motion.p variants={fadeUp} className="text-white/40 text-base mb-10 max-w-md leading-relaxed">
             Transformando procesos empresariales en{' '}
-            <span className="text-white/60">VIEWNEXT · IBM</span>. Apex, Flows,
-            Service/Sales/Experience Cloud y tareas de consultoría.
+            <span className="text-white/60">VIEWNEXT · IBM</span>.
+            <br />
+            Apex, Flows, Service/Sales/Experience Cloud y tareas de consultoría.
           </motion.p>
 
           {/* CTA buttons */}
@@ -80,7 +81,7 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-display font-semibold text-sm hover:border-sf-orange hover:bg-sf-orange/10 transition-all duration-300"
             >
-              <Image src="/assets/trailhead-logo.png" alt="Trailhead" width={18} height={18} className="object-contain h-[18px] w-auto" />
+              <Image src="/assets/TrailheadRecorte.png" alt="Trailhead" width={18} height={18} className="object-contain h-[18px] w-auto" />
               Ver Trailhead
             </a>
           </motion.div>
@@ -126,7 +127,7 @@ export default function HeroSection() {
               transition={{ delay: 1.2, type: 'spring', stiffness: 200, damping: 12 }}
               className="absolute -bottom-4 -left-4 bg-sf-navy border border-sf-orange/30 rounded-xl px-4 py-2 flex items-center gap-2"
             >
-              <span className="text-sf-orange text-lg">🔥</span>
+              <Image src="/icons/flame.svg" alt="" width={20} height={20} className="w-5 h-5" />
               <div>
                 <p className="text-white text-xs font-display font-bold">Ranger Nv.4</p>
                 <p className="text-white/40 text-xs font-mono">Trailhead</p>
@@ -140,7 +141,7 @@ export default function HeroSection() {
               transition={{ delay: 1.4, type: 'spring', stiffness: 200, damping: 12 }}
               className="absolute -top-4 -right-4 bg-sf-navy border border-sf-blue/30 rounded-xl px-4 py-2 flex items-center gap-2"
             >
-              <span className="text-sf-blue text-lg">🎖</span>
+              <Image src="/icons/medal.svg" alt="" width={20} height={20} className="w-5 h-5" />
               <div>
                 <p className="text-white text-xs font-display font-bold">8 Certs</p>
                 <p className="text-white/40 text-xs font-mono">Certificado</p>

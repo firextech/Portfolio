@@ -116,12 +116,12 @@ export default function AboutSection() {
               </p>
               <p>
                 En <strong className="text-sf-navy">VIEWNEXT (IBM)</strong> diseño e implemento soluciones
-                Salesforce personalizadas para clientes enterprise, abarcando automatización avanzada con Flows,
+                Salesforce personalizadas, abarcando automatización avanzada con Flows,
                 desarrollo Apex, integraciones con sistemas externos e implementaciones completas de Service Cloud.
               </p>
               <p>
                 Con <strong className="text-sf-navy">8 certificaciones oficiales de Salesforce</strong>, rango
-                Ranger nivel 4 en Trailhead y más de 35 superbadges completados, combino solidez técnica
+                Ranger nivel 4 en Trailhead y más de 40 superbadges completados, combino solidez técnica
                 con visión funcional para entregar soluciones robustas, escalables y alineadas con los objetivos
                 de negocio de cada cliente.
               </p>
@@ -135,7 +135,7 @@ export default function AboutSection() {
             <div className="pt-4 border-t border-sf-cloud">
               <p className="text-sf-navy/40 text-xs font-mono uppercase tracking-widest mb-3">Especialidades clave</p>
               <div className="flex flex-wrap gap-2">
-                {['Apex', 'Flows', 'Service Cloud', 'LWC', 'SOQL', 'REST API', 'Einstein AI', 'Administración'].map((t) => (
+                {['Apex', 'Flows', 'Service Cloud', 'Sales Cloud', 'Experience Cloud', 'LWC', 'Visualforce Pages', 'SOQL', 'REST API', 'Administración', 'Tareas de consultoría'].map((t) => (
                   <span
                     key={t}
                     className="px-3 py-1 rounded-lg bg-sf-blue/8 text-sf-blue text-sm font-display font-medium border border-sf-blue/15"

@@ -39,7 +39,7 @@ export const CERTIFICATIONS: Certification[] = [
     color: '#0D9DDA',
     gradient: ['#0D9DDA', '#0A7DB3'],
     issueYear: '2023',
-    description: 'Implementación de soluciones enterprise de atención al cliente',
+    description: 'Implementación de soluciones de atención al cliente',
   },
   {
     id: 'einstein-prediction',
@@ -124,7 +124,7 @@ export const EXPERIENCES: Experience[] = [
     type: 'full-time',
     current: true,
     description: [
-      'Diseño e implementación de soluciones Salesforce personalizadas para clientes enterprise.',
+      'Diseño e implementación de soluciones Salesforce personalizadas.',
       'Desarrollo en Apex, Visualforce y Lightning Web Components (LWC) con foco en rendimiento.',
       'Automatización avanzada de procesos de negocio con Flows, validaciones y workflows.',
       'Gestión integral del modelo de seguridad: perfiles, conjuntos de permisos y jerarquías de roles.',
@@ -205,7 +205,7 @@ export const SKILLS: Skill[] = [
 export const TRAILHEAD_STATS = {
   rank: 'Ranger',
   rankLevel: 4,
-  superbadges: 35,
+  superbadges: 40,
   modules: 200,
   points: 120000,
   profileUrl: 'https://www.salesforce.com/trailblazer/dgiljimnez',
