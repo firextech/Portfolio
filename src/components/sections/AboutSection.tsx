@@ -11,7 +11,7 @@ const STATS = [
   { end: 3, suffix: '+', label: 'Años de\nexperiencia', color: '#00A1E0' },
   { end: 8,  suffix: '',  label: 'Certificaciones\nSalesforce',  color: '#1B96FF' },
   { end: 4,  suffix: '',  label: 'Nivel Ranger\nTrailhead',       color: '#FF9900' },
-  { end: 35, suffix: '+', label: 'Superbadges\ncompletados',      color: '#7B5EA7' },
+  { end: 40, suffix: '+', label: 'Superbadges\ncompletados',      color: '#7B5EA7' },
 ]
 
 
@@ -117,17 +117,20 @@ export default function AboutSection() {
               <p>
                 En <strong className="text-sf-navy">VIEWNEXT (IBM)</strong> diseño e implemento soluciones
                 Salesforce personalizadas, abarcando automatización avanzada con Flows,
-                desarrollo Apex, integraciones con sistemas externos e implementaciones completas de Service Cloud.
+                desarrollo Apex, integraciones con sistemas externos e implementaciones completas. Así como
+                realizar tareas de consultoría diaria en las que se engloban configuraciones, permisos,
+                extracciones SOQL, etc.
               </p>
               <p>
                 Con <strong className="text-sf-navy">8 certificaciones oficiales de Salesforce</strong>, rango
                 Ranger nivel 4 en Trailhead y más de 40 superbadges completados, combino solidez técnica
                 con visión funcional para entregar soluciones robustas, escalables y alineadas con los objetivos
-                de negocio de cada cliente.
+                de negocio.
               </p>
               <p>
                 En 2026, mi foco está en la <strong className="text-sf-navy">adopción de Salesforce</strong>{' '}
-                utilizando inteligencia artificial aplicada a CRM.
+                utilizando inteligencia artificial aplicada a CRM. Usando diversas herramientas como Python
+                para facilitar las tareas dentro de la plataforma.
               </p>
             </div>
 
@@ -135,7 +138,7 @@ export default function AboutSection() {
             <div className="pt-4 border-t border-sf-cloud">
               <p className="text-sf-navy/40 text-xs font-mono uppercase tracking-widest mb-3">Especialidades clave</p>
               <div className="flex flex-wrap gap-2">
-                {['Apex', 'Flows', 'Service Cloud', 'Sales Cloud', 'Experience Cloud', 'LWC', 'Visualforce Pages', 'SOQL', 'REST API', 'Administración', 'Tareas de consultoría'].map((t) => (
+                {['Apex', 'Flows', 'Service Cloud', 'Sales Cloud', 'Experience Cloud', 'LWC', 'Visualforce Pages', 'SOQL', 'REST API', 'Administración', 'Tareas de consultoría', 'IA'].map((t) => (
                   <span
                     key={t}
                     className="px-3 py-1 rounded-lg bg-sf-blue/8 text-sf-blue text-sm font-display font-medium border border-sf-blue/15"

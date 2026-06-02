@@ -1,13 +1,16 @@
 'use client'
-import { useRef, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import ScrollReveal from '@/components/ui/ScrollReveal'
-import { fadeUp, fadeLeft, stagger } from '@/lib/motion'
 import { EXPERIENCES } from '@/lib/data'
+
+const MAIN_EXPERIENCES = EXPERIENCES.filter((e) => !e.outsideEcosystem)
+const OUTSIDE_EXPERIENCES = EXPERIENCES.filter((e) => e.outsideEcosystem)
 
 export default function ExperienceSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [showOutside, setShowOutside] = useState(false)
 
   return (
     <section
@@ -48,9 +51,47 @@ export default function ExperienceSection() {
           </div>
 
           <div className="space-y-16 lg:space-y-24">
-            {EXPERIENCES.map((exp, i) => (
+            {/* Experiencia dentro del ecosistema Salesforce */}
+            {MAIN_EXPERIENCES.map((exp, i) => (
               <TimelineItem key={exp.company} exp={exp} index={i} inView={inView} />
             ))}
+
+            {/* Experiencia fuera del ecosistema Salesforce */}
+            <AnimatePresence initial={false}>
+              {showOutside &&
+                OUTSIDE_EXPERIENCES.map((exp, i) => (
+                  <TimelineItem
+                    key={exp.company}
+                    exp={exp}
+                    index={MAIN_EXPERIENCES.length + i}
+                    inView
+                    secondary
+                  />
+                ))}
+            </AnimatePresence>
+          </div>
+
+          {/* Toggle button */}
+          <div className="relative z-10 flex justify-center mt-16 pl-16 lg:pl-0">
+            <button
+              onClick={() => setShowOutside((v) => !v)}
+              aria-expanded={showOutside}
+              className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sf-blue/25 bg-white/5 text-white/70 text-sm font-display font-medium hover:border-sf-blue/50 hover:text-white hover:bg-white/10 transition-all duration-300"
+            >
+              <span className="w-2 h-2 rounded-full bg-sf-blue/60 group-hover:bg-sf-blue transition-colors" />
+              {showOutside
+                ? 'Ocultar experiencia fuera de Salesforce'
+                : 'Ver experiencia laboral fuera de Salesforce'}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className={`w-4 h-4 transition-transform duration-300 ${showOutside ? 'rotate-180' : ''}`}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -64,14 +105,25 @@ export default function ExperienceSection() {
   )
 }
 
-function TimelineItem({ exp, index, inView }: { exp: typeof EXPERIENCES[0]; index: number; inView: boolean }) {
+function TimelineItem({
+  exp,
+  index,
+  inView,
+  secondary = false,
+}: {
+  exp: typeof EXPERIENCES[0]
+  index: number
+  inView: boolean
+  secondary?: boolean
+}) {
   const isLeft = index % 2 === 0
 
   return (
     <motion.div
       initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? -50 : 50 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.5 + index * 0.25 }}
+      animate={inView ? { opacity: secondary ? 0.85 : 1, x: 0 } : { opacity: 0, x: isLeft ? -50 : 50 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: secondary ? 0 : 0.5 + index * 0.25 }}
       className={`relative flex flex-col lg:flex-row lg:gap-8 pl-16 lg:pl-0 ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
     >
       {/* Timeline dot */}
@@ -118,17 +170,28 @@ function TimelineItem({ exp, index, inView }: { exp: typeof EXPERIENCES[0]; inde
           )}
         </div>
 
-        <div className="rounded-2xl border border-sf-blue/10 bg-white/5 p-6 hover:border-sf-blue/30 hover:bg-white/8 transition-all duration-500 group">
+        <div
+          className={`rounded-2xl border p-6 transition-all duration-500 group ${
+            secondary
+              ? 'border-white/10 bg-white/[0.03] hover:border-white/20'
+              : 'border-sf-blue/10 bg-white/5 hover:border-sf-blue/30 hover:bg-white/8'
+          }`}
+        >
           {/* Company header */}
-          <div className="flex items-start justify-between mb-4">
+          <div className="flex items-start justify-between mb-4 gap-3">
             <div>
-              <h3 className="font-display font-bold text-white text-xl mb-1">{exp.role}</h3>
-              <p className="text-sf-blue font-display font-semibold">{exp.company}</p>
+              <h3 className={`font-display font-bold text-xl mb-1 ${secondary ? 'text-white/80' : 'text-white'}`}>{exp.role}</h3>
+              <p className={`font-display font-semibold ${secondary ? 'text-white/50' : 'text-sf-blue'}`}>{exp.company}</p>
             </div>
             {exp.current && (
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-sf-blue/15 border border-sf-blue/30 text-sf-blue text-xs font-mono">
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-sf-blue/15 border border-sf-blue/30 text-sf-blue text-xs font-mono flex-shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-sf-blue animate-pulse" />
                 Actual
+              </span>
+            )}
+            {secondary && (
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/15 text-white/40 text-xs font-mono flex-shrink-0">
+                Fuera de Salesforce
               </span>
             )}
           </div>

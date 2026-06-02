@@ -111,7 +111,7 @@ export default function TrailheadSection() {
             <ScrollReveal delay={0.4}>
               <div className="space-y-3">
                 {[
-                  { iconSrc: '/icons/trophy.svg', title: 'Ranger', desc: 'El rango más alto de Trailhead, nivel 4' },
+                  { iconSrc: '/icons/trophy.svg', title: 'Ranger 4', desc: 'Aprendiendo continuamente' },
                   { iconSrc: '/icons/bolt.svg',   title: 'Superbadge Champion', desc: '40+ superbadges de Salesforce completados' },
                   { iconSrc: '/icons/robot.svg',  title: 'Einstein AI Expert', desc: 'Especializado en AI y Einstein Analytics' },
                 ].map((item) => (

@@ -61,7 +61,7 @@ export default function HeroSection() {
             Transformando procesos empresariales en{' '}
             <span className="text-white/60">VIEWNEXT · IBM</span>.
             <br />
-            Apex, Flows, Service/Sales/Experience Cloud y tareas de consultoría.
+            Desarrollo Programativo/declarativo y tareas de consultoría en Salesforce platform.
           </motion.p>
 
           {/* CTA buttons */}

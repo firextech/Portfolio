@@ -10,12 +10,12 @@ import { SKILLS, SKILL_CATEGORIES, type Skill } from '@/lib/data'
 const CATEGORIES = Object.keys(SKILL_CATEGORIES) as Array<keyof typeof SKILL_CATEGORIES>
 
 export default function SkillsSection() {
-  const [activeCategory, setActiveCategory] = useState<keyof typeof SKILL_CATEGORIES | 'all'>('all')
+  const [activeCategory, setActiveCategory] = useState<keyof typeof SKILL_CATEGORIES | 'relevant'>('relevant')
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 })
   const showingIA = activeCategory === 'ia'
 
-  const filtered = activeCategory === 'all'
-    ? SKILLS
+  const filtered = activeCategory === 'relevant'
+    ? SKILLS.filter((s) => s.relevant)
     : SKILLS.filter((s) => s.category === activeCategory)
 
   return (
@@ -36,12 +36,15 @@ export default function SkillsSection() {
         <ScrollReveal delay={0.1}>
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             <button
-              onClick={() => setActiveCategory('all')}
-              className={`px-4 py-2 rounded-xl text-sm font-display font-medium transition-all duration-300 ${
-                activeCategory === 'all' ? 'bg-sf-navy text-white' : 'bg-sf-cloud text-sf-navy hover:bg-sf-gray/10'
+              onClick={() => setActiveCategory('relevant')}
+              className={`px-4 py-2 rounded-xl text-sm font-display font-medium transition-all duration-300 inline-flex items-center gap-1.5 ${
+                activeCategory === 'relevant' ? 'bg-sf-navy text-white' : 'bg-sf-cloud text-sf-navy hover:bg-sf-gray/10'
               }`}
             >
-              Todos
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+                <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z" />
+              </svg>
+              Más relevantes
             </button>
             {CATEGORIES.map((cat) => {
               const meta = SKILL_CATEGORIES[cat]
